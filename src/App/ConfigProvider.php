@@ -22,6 +22,12 @@ class ConfigProvider
                 'allowed_methods' => ['GET'],
             ],
             [
+                'name' => 'contact',
+                'path' => '/contact',
+                'middleware' => Action\ContactPageAction::class,
+                'allowed_methods' => ['GET'],
+            ],
+            [
                 'name' => 'disclaimer',
                 'path' => '/disclaimer',
                 'middleware' => Action\DisclaimerPageAction::class,
@@ -45,6 +51,7 @@ class ConfigProvider
             'factories' => [
                 Action\HomePageAction::class => Action\HomePageFactory::class,
                 Action\DisclaimerPageAction::class => Action\GenericPageFactory::class,
+                Action\ContactPageAction::class => Action\GenericPageFactory::class,
             ],
         ];
     }
