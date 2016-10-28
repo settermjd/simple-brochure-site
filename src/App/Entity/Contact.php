@@ -28,7 +28,12 @@ class Contact
      * @Annotation\Required({"required":"true"})
      * @Annotation\Validator({"name":"NotEmpty"})
      * @Annotation\Filter({"name":"StripTags"})
-     * @Annotation\Options({"label":"Your Name:"})
+     * @Annotation\Attributes({
+     *     "class":"form-control"
+     * })
+     * @Annotation\Options({
+     *     "label":"Your Name:"
+     * })
      *
      * @var string
      */
@@ -40,6 +45,9 @@ class Contact
      * @Annotation\Validator({"name":"NotEmpty"})
      * @Annotation\Filter({"name":"StripTags"})
      * @Annotation\Filter({"name":"StringTrim"})
+     * @Annotation\Attributes({
+     *     "class":"form-control"
+     * })
      * @Annotation\Options({"label":"Your Email Address:"})
      * @Annotation\Validator({"name":"EmailAddress"})
      *
@@ -51,6 +59,9 @@ class Contact
      * @Annotation\Type("Zend\Form\Element\Text")
      * @Annotation\Required({"required":"false"})
      * @Annotation\Filter({"name":"StripTags"})
+     * @Annotation\Attributes({
+     *     "class":"form-control"
+     * })
      * @Annotation\Options({"label":"Your Message:"})
      *
      * @var string
@@ -59,7 +70,10 @@ class Contact
 
     /**
      * @Annotation\Type("Zend\Form\Element\Submit")
-     * @Annotation\Attributes({"value":"Submit"})
+     * @Annotation\Attributes({
+     *     "value":"Submit",
+     *     "class":"btn btn-default btn-block"
+     * })
      *
      * @var string
      */
