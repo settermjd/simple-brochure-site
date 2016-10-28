@@ -25,7 +25,7 @@ class ConfigProvider
                 'name' => 'contact',
                 'path' => '/contact',
                 'middleware' => Action\ContactPageAction::class,
-                'allowed_methods' => ['GET'],
+                'allowed_methods' => ['GET', 'POST'],
             ],
             [
                 'name' => 'disclaimer',
