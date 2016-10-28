@@ -14,16 +14,19 @@ class DisclaimerPageAction
 
     private $template;
 
-    public function __construct(Router\RouterInterface $router, Template\TemplateRendererInterface $template = null)
-    {
+    public function __construct(
+        Router\RouterInterface $router,
+        Template\TemplateRendererInterface $template = null
+    ) {
         $this->router   = $router;
         $this->template = $template;
     }
 
-    public function __invoke(ServerRequestInterface $request, ResponseInterface $response, callable $next = null)
-    {
-        $data = [];
-
-        return new HtmlResponse($this->template->render('app::home-page', $data));
+    public function __invoke(
+        ServerRequestInterface $request,
+        ResponseInterface $response,
+        callable $next = null
+    ) {
+        return new HtmlResponse($this->template->render('app::disclaimer-page', []));
     }
 }
