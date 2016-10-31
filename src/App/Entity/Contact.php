@@ -15,8 +15,9 @@ use Zend\Form\Annotation;
 class Contact
 {
     /**
+     * @Annotation\AllowEmpty
      * @Annotation\Type("Zend\Form\Element\Text")
-     * @Annotation\Required({"required":"false"})
+     * @Annotation\Required(false)
      * @Annotation\Filter({"name":"StripTags"})
      * @Annotation\Filter({"name":"Digits"})
      * @Annotation\Filter({"name":"ToInt"})
