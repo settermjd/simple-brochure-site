@@ -22,7 +22,8 @@
         "zendframework/zend-stdlib": "^2.7 || ^3.0",
         "zendframework/zend-expressive-fastroute": "^1.0",
         "zendframework/zend-servicemanager": "^2.7.3 || ^3.0",
-        "zendframework/zend-expressive-zendviewrenderer": "^1.0"
+        "zendframework/zend-expressive-zendviewrenderer": "^1.0",
+        "zendframework/zend-db": "^2.8"
     },
     "require-dev": {
         "codeception/codeception": "^2.2",
