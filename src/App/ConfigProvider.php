@@ -53,6 +53,10 @@ class ConfigProvider
                 Action\DisclaimerPageAction::class => Action\GenericPageFactory::class,
                 Action\ContactPageAction::class => Action\GenericPageFactory::class,
             ],
+            'abstract_factories' => [
+                ServiceManager\TableAbstractFactory::class,
+                ServiceManager\TableGatewayAbstractFactory::class,
+            ]
         ];
     }
 }
