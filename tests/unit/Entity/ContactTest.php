@@ -59,6 +59,21 @@ class ContactTest extends Unit
         $this->assertSame($data['message'], $contact->getMessage());
     }
 
+    public function testCanExtract()
+    {
+        $contact = new Contact();
+        $data = [
+            'id' => $this->faker->randomDigitNotNull,
+            'name' => $this->faker->name,
+            'email' => $this->faker->email,
+            'message' => $this->faker->text,
+        ];
+
+        $contact->populate($data);
+        $this->assertEquals($data, $contact->getArrayCopy());
+    }
+
+
     /**
      * @dataProvider formValidatorDataProvider
      *

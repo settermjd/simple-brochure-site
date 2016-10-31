@@ -96,6 +96,14 @@ class Contact
         $this->message = $data['message'];
     }
 
+    public function getArrayCopy()
+    {
+        $objCopy = get_object_vars($this);
+        unset($objCopy['submit']);
+
+        return $objCopy;
+    }
+
     /**
      * @return int
      */
