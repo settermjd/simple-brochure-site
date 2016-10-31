@@ -13,8 +13,12 @@ use Zend\Form\Annotation\AnnotationBuilder;
 
 class ContactPageAction
 {
+    /**
+     * @var Router\RouterInterface
+     */
     private $router;
 
+    /** @var Template\TemplateRendererInterface  */
     private $template;
 
     /** @var ContactFormServiceInterface  */
@@ -25,7 +29,7 @@ class ContactPageAction
         Template\TemplateRendererInterface $template = null,
         ContactFormServiceInterface $service
     ) {
-        $this->router   = $router;
+        $this->router = $router;
         $this->template = $template;
         $this->contactService = $service;
     }
@@ -35,8 +39,22 @@ class ContactPageAction
         ResponseInterface $response,
         callable $next = null
     ) {
-        return new HtmlResponse($this->template->render('app::contact-page', [
-            'form' => (new AnnotationBuilder())->createForm(new Contact())
-        ]));
+        $data = [];
+        $form = (new AnnotationBuilder())->createForm(new Contact());
+
+        if ($request->getMethod() === 'POST') {
+            $form->bind(new Contact());
+            $form->setData($request->getParsedBody());
+            if ($form->isValid()) {
+                if ($this->contactService->submitContactForm($form->getData())) {
+                    $data['valid_submit'] = true;
+                    $form->clearAttributes();
+                }
+            }
+        }
+
+        $data['form'] = $form;
+
+        return new HtmlResponse($this->template->render('app::contact-page', $data));
     }
 }

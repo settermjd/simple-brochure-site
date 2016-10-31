@@ -33,5 +33,6 @@ class ContactCest
         ]);
         $I->seeCurrentUrlEquals('/contact');
         $I->canSeeResponseCodeIs(200);
+        $I->see('Your submission has been received. Thank you for your time.', '//#notification');
     }
 }
