@@ -8,6 +8,9 @@ use Zend\Form\Annotation;
 /**
  * @Annotation\Hydrator("Zend\Hydrator\ArraySerializable")
  * @Annotation\Name("Contact")
+ * @Annotation\Options({
+ *     "method":"POST"
+ * })
  */
 class Contact
 {
