@@ -2,6 +2,9 @@
 
 namespace App;
 
+use App\Service\ContactFormServiceInterface;
+use App\TableGateway\ContactTable;
+
 class ConfigProvider
 {
     public function __invoke()
@@ -51,11 +54,14 @@ class ConfigProvider
             'factories' => [
                 Action\HomePageAction::class => Action\HomePageFactory::class,
                 Action\DisclaimerPageAction::class => Action\GenericPageFactory::class,
-                Action\ContactPageAction::class => Action\GenericPageFactory::class,
+                Action\ContactPageAction::class => Action\ContactPageFactory::class,
             ],
             'abstract_factories' => [
                 ServiceManager\TableAbstractFactory::class,
                 ServiceManager\TableGatewayAbstractFactory::class,
+            ],
+            'aliases' => [
+                ContactFormServiceInterface::class => ContactTable::class
             ]
         ];
     }

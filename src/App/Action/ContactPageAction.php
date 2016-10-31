@@ -3,6 +3,7 @@
 namespace App\Action;
 
 use App\Entity\Contact;
+use App\Service\ContactFormServiceInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Zend\Diactoros\Response\HtmlResponse;
@@ -16,12 +17,17 @@ class ContactPageAction
 
     private $template;
 
+    /** @var ContactFormServiceInterface  */
+    private $contactService;
+
     public function __construct(
         Router\RouterInterface $router,
-        Template\TemplateRendererInterface $template = null
+        Template\TemplateRendererInterface $template = null,
+        ContactFormServiceInterface $service
     ) {
         $this->router   = $router;
         $this->template = $template;
+        $this->contactService = $service;
     }
 
     public function __invoke(
