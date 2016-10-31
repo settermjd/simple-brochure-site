@@ -15,7 +15,9 @@ extensions:
 modules:
     config:
         Db:
-            dsn: ''
-            user: ''
-            password: ''
+            dsn: 'sqlite:tests/_data/database/database.sq3.sqlite'
+            user: '-'
+            password: '-'
             dump: tests/_data/dump.sql
+            cleanup: true
+            populate: true
