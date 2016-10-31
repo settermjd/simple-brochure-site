@@ -42,6 +42,23 @@ class ContactTest extends Unit
         $this->assertSame($data['message'], $contact->getMessage());
     }
 
+    public function testCanPopulateContactWithoutId()
+    {
+        $contact = new Contact();
+        $data = [
+            'name' => $this->faker->name,
+            'email' => $this->faker->email,
+            'message' => $this->faker->text,
+        ];
+
+        $contact->populate($data);
+
+        $this->assertNull($contact->getId());
+        $this->assertSame($data['name'], $contact->getName());
+        $this->assertSame($data['email'], $contact->getEmail());
+        $this->assertSame($data['message'], $contact->getMessage());
+    }
+
     /**
      * @dataProvider formValidatorDataProvider
      *

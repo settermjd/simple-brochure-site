@@ -88,7 +88,9 @@ class Contact
             throw new HydrationException();
         }
 
-        $this->id = $data['id'];
+        if (isset($data['id'])) {
+            $this->id = $data['id'];
+        }
         $this->name = $data['name'];
         $this->email = $data['email'];
         $this->message = $data['message'];
