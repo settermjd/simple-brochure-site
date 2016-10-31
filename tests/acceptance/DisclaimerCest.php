@@ -6,15 +6,6 @@
  */
 class DisclaimerCest
 {
-    public function _before(AcceptanceTester $I)
-    {
-    }
-
-    public function _after(AcceptanceTester $I)
-    {
-    }
-
-    // tests
     public function canViewTheDisclaimerPage(
         AcceptanceTester $I,
         \Page\DisclaimerPage $disclaimerPage

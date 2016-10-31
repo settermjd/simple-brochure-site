@@ -6,15 +6,6 @@
  */
 class HomeCest
 {
-    public function _before(AcceptanceTester $I)
-    {
-    }
-
-    public function _after(AcceptanceTester $I)
-    {
-    }
-
-    // tests
     public function testHomePage(AcceptanceTester $I)
     {
         $I->am('guest user');

@@ -2,8 +2,6 @@
 
 use App\Action\DisclaimerPageAction;
 use App\Action\GenericPageFactory;
-use AspectMock\Test as test;
-use Codeception\Util\Stub;
 use Interop\Container\ContainerInterface;
 use Mockery as m;
 use Zend\Expressive\Router\RouterInterface;
