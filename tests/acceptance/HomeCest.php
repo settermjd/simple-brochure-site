@@ -1,6 +1,9 @@
 <?php
 
-
+/**
+ * Class HomeCest
+ * @group BusinessPages
+ */
 class HomeCest
 {
     public function _before(AcceptanceTester $I)

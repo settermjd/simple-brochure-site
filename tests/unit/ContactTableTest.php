@@ -4,6 +4,11 @@ use App\Entity\Contact;
 use App\TableGateway\ContactTable;
 use Faker\Factory;
 
+/**
+ * Class ContactTableTest
+ * @group ContactPage
+ * @group DataSourceLayer
+ */
 class ContactTableTest extends \Codeception\Test\Unit
 {
     /**

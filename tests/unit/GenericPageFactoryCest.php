@@ -9,6 +9,11 @@ use Mockery as m;
 use Zend\Expressive\Router\RouterInterface;
 use Zend\Expressive\Template\TemplateRendererInterface;
 
+/**
+ * Class GenericPageFactoryCest
+ * @group Factories
+ * @group BusinessPages
+ */
 class GenericPageFactoryCest
 {
     private $container;

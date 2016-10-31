@@ -1,6 +1,9 @@
 <?php
 
-
+/**
+ * Class DisclaimerCest
+ * @group BusinessPages
+ */
 class DisclaimerCest
 {
     public function _before(AcceptanceTester $I)
@@ -12,8 +15,10 @@ class DisclaimerCest
     }
 
     // tests
-    public function canViewTheDisclaimerPage(AcceptanceTester $I, \Page\DisclaimerPage $disclaimerPage)
-    {
+    public function canViewTheDisclaimerPage(
+        AcceptanceTester $I,
+        \Page\DisclaimerPage $disclaimerPage
+    ) {
         $I->am('guest user');
         $I->wantTo('visit the disclaimer page');
         $I->lookForwardTo('check that everything is as it should be');

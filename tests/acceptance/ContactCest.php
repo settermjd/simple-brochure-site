@@ -2,6 +2,10 @@
 
 use Faker\Factory;
 
+/**
+ * Class ContactCest
+ * @group ContactPage
+ */
 class ContactCest
 {
     /**

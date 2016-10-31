@@ -5,6 +5,10 @@ use Codeception\Util\Stub;
 use Zend\Diactoros\Response;
 use Zend\Diactoros\ServerRequest;
 
+/**
+ * Class DisclaimerPageActionCest
+ * @group BusinessPages
+ */
 class DisclaimerPageActionCest
 {
     private $router;

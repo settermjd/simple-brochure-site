@@ -7,6 +7,11 @@ use Faker\Factory;
 use Zend\Diactoros\Response;
 use Zend\Diactoros\ServerRequest;
 
+/**
+ * Class ContactPageCest
+ * @group ContactPage
+ * @group BusinessPages
+ */
 class ContactPageCest
 {
     private $router;

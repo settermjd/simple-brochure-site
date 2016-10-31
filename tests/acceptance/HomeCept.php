@@ -1,4 +1,5 @@
-<?php 
+<?php
+// @group BusinessPages
 $I = new AcceptanceTester($scenario);
 $I->am('guest user');
 $I->wantTo('visit home page');
